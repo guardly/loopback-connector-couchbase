@@ -1,37 +1,28 @@
 {
-  "name": "loopback-connector-couchbase",
-  "version": "0.0.1",
-  "description": "A Couchbase connector for Stongloop Loopback",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/guardly/loopback-connector-couchbase.git"
-  },
+  "name": "loopback-connector-couchbasedb",
+  "version": "1.0.0",
+  "description": "LoopBack CouchbaseDB Connector",
   "keywords": [
     "StrongLoop",
     "LoopBack",
-    "Couchbase",
+    "CouchbaseDB",
     "DataSource",
     "Connector"
   ],
-  "author": "Jason Broughton (Guardly Corp)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/guardly/loopback-connector-couchbase/issues"
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
   },
-  "homepage": "https://github.com/guardly/loopback-connector-couchbase",
   "dependencies": {
-    "loopback-connector": "^1.1.1",
-    "couchbase": "^1.2.4",
-    "debug": "^2.0.0",
-    "util": "^0.10.3",
-    "async": "^0.9.0"
+    "async": "~0.9.0",
+    "couchbase": "^2.0.1",
+    "debug": "~1.0.2",
+    "loopback-connector": "1.x",
+    "node-dir": "^0.1.6",
+    "node-uuid": "^1.4.1"
   },
   "devDependencies": {
-    "loopback-datasource-juggler": "^2.9.0",
-    "mocha": "^1.21.4"
+    "loopback-datasource-juggler": "1.x.x",
+    "rc": "~0.4.0"
   }
 }

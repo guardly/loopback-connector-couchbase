@@ -1,1 +1,1 @@
-module.exports = require("./lib/couchbase.js");
+module.exports = require('./lib/cb.js');
