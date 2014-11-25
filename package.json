@@ -1,5 +1,5 @@
 {
-  "name": "loopback-connector-couchbasedb",
+  "name": "loopback-connector-couchbase",
   "version": "1.0.0",
   "description": "LoopBack CouchbaseDB Connector",
   "keywords": [
