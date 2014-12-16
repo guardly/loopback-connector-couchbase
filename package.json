@@ -1,55 +1,51 @@
 {
-  "name": "loopback-connector-couchbase",
-  "version": "1.0.1",
-  "description": "LoopBack Couchbase Connector",
-  "keywords": [
-    "StrongLoop",
-    "LoopBack",
-    "Couchbase",
-    "DataSource",
-    "Connector"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "test": "make test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/guardly/loopback-connector-couchbase.git"
-  },
-  "dependencies": {
-    "async": "~0.9.0",
-    "couchbase": "^2.0.1",
-    "debug": "~1.0.2",
-    "loopback": "^2.8.6",
-    "loopback-connector": "^1.2.0",
-    "loopback-datasource-juggler": "^2.12.0",
-    "node-dir": "^0.1.6",
-    "node-uuid": "^1.4.1"
-  },
-  "devDependencies": {
-    "rc": "~0.4.0"
-  },
-  "license": {
-    "name": "MIT",
-    "url": "https://github.com/guardly/loopback-connector-couchbase/blob/master/LICENSE.md"
-  },
-  "bugs": {
-    "url": "https://github.com/guardly/loopback-connector-couchbase/issues"
-  },
-  "homepage": "https://github.com/guardly/loopback-connector-couchbase",
-  "maintainers": [
-    {
-      "name": "ecguardly",
-      "email": "eric@guardly.com"
+    "name": "loopback-connector-couchbase",
+    "version": "1.0.0",
+    "description": "LoopBack Couchbase Connector",
+    "keywords": [
+        "StrongLoop",
+        "LoopBack",
+        "Couchbase",
+        "DataSource",
+        "Connector"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "make test"
     },
-    {
-      "name": "nolandubeau",
-      "email": "nolan@guardly.com"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guardly/loopback-connector-couchbase.git"
     },
-    {
-      "name": "jbroughton72",
-      "email": "jason@guardly.com"
-    }
-  ]
+    "dependencies": {
+        "async": "~0.9.0",
+        "couchbase": "^2.0.1",
+        "debug": "~1.0.2",
+        "loopback": "^2.8.6",
+        "loopback-connector": "^1.2.0",
+        "loopback-datasource-juggler": "^2.12.0",
+        "node-dir": "^0.1.6",
+        "node-uuid": "^1.4.1"
+    },
+    "devDependencies": {
+        "rc": "~0.4.0"
+    },
+    "license": {
+        "name": "MIT",
+        "url": "https://github.com/guardly/loopback-connector-couchbase/blob/master/LICENSE.md"
+    },
+    "bugs": {
+        "url": "https://github.com/guardly/loopback-connector-couchbase/issues"
+    },
+    "homepage": "https://github.com/guardly/loopback-connector-couchbase",
+    "maintainers": [{
+        "name": "ecguardly",
+        "email": "eric@guardly.com"
+    }, {
+        "name": "nolandubeau",
+        "email": "nolan@guardly.com"
+    }, {
+        "name": "jbroughton72",
+        "email": "jason@guardly.com"
+    }]
 }
