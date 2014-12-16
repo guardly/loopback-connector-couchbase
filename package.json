@@ -21,14 +21,13 @@
         "async": "~0.9.0",
         "couchbase": "^2.0.1",
         "debug": "~1.0.2",
-        "loopback": "^2.8.1",
-        "loopback-connector": "1.x",
-        "loopback-datasource-juggler": "^2.11.0",
+        "loopback": "^2.8.6",
+        "loopback-connector": "^1.2.0",
+        "loopback-datasource-juggler": "^2.12.0",
         "node-dir": "^0.1.6",
         "node-uuid": "^1.4.1"
     },
     "devDependencies": {
-        "loopback-datasource-juggler": "1.x.x",
         "rc": "~0.4.0"
     },
     "license": {
