@@ -13,7 +13,10 @@
     "scripts": {
         "test": "make test"
     },
-    "repository": "https://github.com/guardly/loopback-connector-couchbase",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guardly/loopback-connector-couchbase.git"
+    },
     "dependencies": {
         "async": "~0.9.0",
         "couchbase": "^2.0.1",
@@ -27,6 +30,10 @@
     "devDependencies": {
         "loopback-datasource-juggler": "1.x.x",
         "rc": "~0.4.0"
+    },
+    "license": {
+        "name": "MIT",
+        "url": "https://github.com/guardly/loopback-connector-couchbase/blob/master/LICENSE.md"
     },
     "bugs": {
         "url": "https://github.com/guardly/loopback-connector-couchbase/issues"
