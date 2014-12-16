@@ -1,37 +1,45 @@
 {
-  "name": "loopback-connector-couchbase",
-  "version": "1.0.0",
-  "description": "LoopBack CouchbaseDB Connector",
-  "keywords": [
-    "StrongLoop",
-    "LoopBack",
-    "CouchbaseDB",
-    "DataSource",
-    "Connector"
-  ],
-  "main": "index.js",
-  "scripts": {
-    "test": "make test"
-  },
-  "repository": "https://github.com/guardly/loopback-connector-couchbase",
-  "dependencies": {
-    "async": "~0.9.0",
-    "couchbase": "^2.0.1",
-    "debug": "~1.0.2",
-    "loopback": "^2.8.1",
-    "loopback-connector": "1.x",
-    "loopback-datasource-juggler": "^2.11.0",
-    "node-dir": "^0.1.6",
-    "node-uuid": "^1.4.1"
-  },
-  "devDependencies": {
-    "loopback-datasource-juggler": "1.x.x",
-    "rc": "~0.4.0"
-  },
-  "readme": "loopback-connector-couchbase\n============================\n\nCouchbase Connector for Strongloop Loopback\n",
-  "readmeFilename": "README.md",
-  "_id": "loopback-connector-couchbase@1.0.0",
-  "_shasum": "9819f5ab43bac66d06d83000aadadfe443a467f1",
-  "_resolved": "git+ssh://git@github.com/guardly/loopback-connector-couchbase.git#bb6a918db0715ee039d620f9f1e45897da00dbe2",
-  "_from": "git+ssh://git@github.com/guardly/loopback-connector-couchbase.git"
+    "name": "loopback-connector-couchbase",
+    "version": "1.0.0",
+    "description": "LoopBack Couchbase Connector",
+    "keywords": [
+        "StrongLoop",
+        "LoopBack",
+        "Couchbase",
+        "DataSource",
+        "Connector"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "make test"
+    },
+    "repository": "https://github.com/guardly/loopback-connector-couchbase",
+    "dependencies": {
+        "async": "~0.9.0",
+        "couchbase": "^2.0.1",
+        "debug": "~1.0.2",
+        "loopback": "^2.8.1",
+        "loopback-connector": "1.x",
+        "loopback-datasource-juggler": "^2.11.0",
+        "node-dir": "^0.1.6",
+        "node-uuid": "^1.4.1"
+    },
+    "devDependencies": {
+        "loopback-datasource-juggler": "1.x.x",
+        "rc": "~0.4.0"
+    },
+    "bugs": {
+        "url": "https://github.com/guardly/loopback-connector-couchbase/issues"
+    },
+    "homepage": "https://github.com/guardly/loopback-connector-couchbase",
+    "maintainers": [{
+        "name": "ecguardly",
+        "email": "eric@guardly.com"
+    }, {
+        "name": "nolandubeau",
+        "email": "nolan@guardly.com"
+    }, {
+        "name": "jbroughton72",
+        "email": "jason@guardly.com"
+    }]
 }
