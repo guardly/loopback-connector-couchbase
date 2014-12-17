@@ -53,7 +53,7 @@ Step 5: Before issuing queries against a Couchbase bucket, run the following com
 
 
 ### Installing the connector
-Once you have  [Bower](http://bower.io/) to manage front-end dependencies:
+```npm install couchbase```
 
 ```npm install loopback-connector-couchbase```
 
