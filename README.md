@@ -8,7 +8,7 @@ The Couchbase Connector module for for [loopback-datasource-juggler](http://docs
 Couchbase Server is a NoSQL document database for interactive web applications. It has a flexible data model, is easily scalable, provides consistent high performance and is "always-on", meaning it can serve application data 24 hours, 7 days a week.
 
 
-### What is N1QL
+### What is N1QL?
 N1QL (pronounced "Nickel") is a next generation query language for Couchbase Server. N1QL presents easy and familiar abstractions to quickly develop scalable applications that work with next generation database systems. It allows for joins, filter expressions, aggregate expressions and many other features to build a rich application. 
 
 
