@@ -64,10 +64,11 @@ The connector can be configured using the following settings from the data sourc
 * host  (default to 'localhost'): The host name or ip address of the Couchbase server
 * port (default to 8091): The port number of the Couchbase server
 * n1qlport (default to 8093): The port number of the N1QL Engine
-* name (default to couchbase): The name of the datasource
+* database: The Couchbase bucket
 * connectionTimeout (default to 20000): The connection timeout value
 * operationTimeout (default to 15000): The operation timeout value
-* env (default to debugging): Environment varialbe for debugging
+
+**NOTE**: Unlike other datasources, Couchbase does not require user credentials to access a bucket/database.  Buckets can be protected with a password, however, the N1QL Developer Pre-release 3 currently does not support querying password protected buckets.  As this capability is released for N1QL, we will update the connector settings.
 
 
 ## Model definition for Couchbase Documents
