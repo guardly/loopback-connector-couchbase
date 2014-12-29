@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-couchbase",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "LoopBack Couchbase Connector",
   "keywords": [
     "StrongLoop",
