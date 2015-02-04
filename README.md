@@ -38,17 +38,17 @@ Step 4:  Open http://localhost:8093/tutorial in your browser to use the tutorial
        
 To connect N1QL with your Couchbase Server:
 
-    ./cbq-engine -couchbase http://[server_name]:8091/
+    ./cbq-engine -datastore=http://[server_name]:8091/
   
 
 To use the command-line interactive query tool:
 
-    ./cbq-engine=http://[couchbase-query-engine-server-name]:8093/
+    ./cbq -engine=http://[couchbase-query-engine-server-name]:8093/
   
    
 Step 5: Before issuing queries against a Couchbase bucket, run the following command from the query command line:
 
-    CREATE PRIMARY INDEX ON [bucket-name]
+    CREATE PRIMARY INDEX ON [bucket-name];
 
 
 
