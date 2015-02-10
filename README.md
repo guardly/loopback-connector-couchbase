@@ -47,6 +47,7 @@ The connector can be configured using the following settings from the data sourc
       "port": "8091",
       "database": "myBucket",
       "name": "couchbase",
+      "password": "secret",
       "connector": "couchbase",
       "mappings": {
         "user": {
