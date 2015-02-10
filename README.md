@@ -71,7 +71,7 @@ Everything should be clear the only interesting parts are mappings & views.
 * "mappings" defines id-prefixes. So if somebody queries for a user by email then the query will be rewritten to a lookup by id. So if I look for {"email": "test@example.com"} it will do instead a look for the id: "u::test@example.com"
 * "views" defines views which can be used to loopup specific values. The example bellow allows to lookup "order" by "userId" by using the view "orders_userid" under a design-document called "loopback". For it to work a view like this has to be setup:
 
-```json
+```
   function (doc, meta) {
     if (doc.docType && doc.docType == "Order" && doc.userId) {
        emit(doc.userId, null);
