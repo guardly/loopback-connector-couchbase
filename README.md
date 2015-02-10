@@ -1,55 +1,21 @@
 
-## loopback-connector-couchbase
+## loopback-connector-couchbase without N1QL
 
 The Couchbase Connector module for for [loopback-datasource-juggler](http://docs.strongloop.com/loopback-datasource-juggler/).
 
+This connector does not use N1QL. That means you can not simply lookup data you do not have view setup and defined in the configuration. This means you have to be very careful which data you query. If you for example have a relationship setup and you want to use it to query related data it will fail till you create * setup a view which allows it. Actually querying data will probably almost always fail if you do not use "findById". So you have to write your application a very specific way for it to work but the price for that effort is high performance. So for the most people using the N1QL implementation (from which I did fork) is probably better: https://github.com/guardly/loopback-connector-couchbase
+
+Btw. is also not really well tested. Did just fork to work best for my own needs of high performance (and no random query need).
 
 ### What is Couchbase Server?
 Couchbase Server is a NoSQL document database for interactive web applications. It has a flexible data model, is easily scalable, provides consistent high performance and is "always-on", meaning it can serve application data 24 hours, 7 days a week.
 
 
-### What is N1QL?
-N1QL (pronounced "Nickel") is a next generation query language for Couchbase Server. N1QL presents easy and familiar abstractions to quickly develop scalable applications that work with next generation database systems. It allows for joins, filter expressions, aggregate expressions and many other features to build a rich application. 
-
-
 ### Getting Started
-Before installing the connector module, make sure you've taken the appropriate steps to install and configure Couchbase Server and the N1QL Engine.
+Before installing the connector module, make sure you've taken the appropriate steps to install and configure Couchbase Server.
 
 * Download and install [Couchbase Server](http://www.couchbase.com/nosql-databases/downloads).
 * After the install completes confirm the Couchbase Administrator is running at http://localhost:8091
-* Download the [N1QL Binaries](http://www.couchbase.com/nosql-databases/downloads#PreRelease)
-
-
-### N1QL Tutorial
-N1QL has an interactive online tutorial and a N1QL cheatsheet. The online tutorial is a good way to get started and play with N1QL in an easy, fun environment. The cheatsheet is a quick glance and easy reference of the N1QL syntax. NOTE: Not all capabilities of the N1QL Engine are supported in this connector. For more information on N1QL, see:
-
-* [N1QL Cheatsheet](http://docs.couchbase.com/files/Couchbase-N1QL-CheatSheet.pdf)
-* [Couchbase Language Tutorial](http://query.pub.couchbase.com/tutorial/#1)
-
-
-### Running N1QL
-To run N1QL on your local system:
-
-Step 1:  Expand the package archive.
-Step 2:  On the command line, navigate to your local N1QL directory.
-Step 3:  Run ./start_tutorial.sh (Unix)
-             ./start_tutorial.bat (Windows)
-Step 4:  Open http://localhost:8093/tutorial in your browser to use the tutorial on your local server.
-       
-To connect N1QL with your Couchbase Server:
-
-    ./cbq-engine -datastore=http://[server_name]:8091/
-  
-
-To use the command-line interactive query tool:
-
-    ./cbq -engine=http://[couchbase-query-engine-server-name]:8093/
-  
-   
-Step 5: Before issuing queries against a Couchbase bucket, run the following command from the query command line:
-
-    CREATE PRIMARY INDEX ON [bucket-name];
-
 
 
 ### Installing the connector
@@ -63,12 +29,55 @@ Step 5: Before issuing queries against a Couchbase bucket, run the following com
 The connector can be configured using the following settings from the data source.
 * host  (default to 'localhost'): The host name or ip address of the Couchbase server
 * port (default to 8091): The port number of the Couchbase server
-* n1qlport (default to 8093): The port number of the N1QL Engine
 * database: The Couchbase bucket
 * connectionTimeout (default to 20000): The connection timeout value
 * operationTimeout (default to 15000): The operation timeout value
+* mappings: Prefixes for values which get used as key (example below)
+* views: Views which can be used to loopup data
 
-**NOTE**: Unlike other datasources, Couchbase does not require user credentials to access a bucket/database.  Buckets can be protected with a password, however, the N1QL Developer Pre-release 3 currently does not support querying password protected buckets.  As this capability is released for N1QL, we will update the connector settings.
+**NOTE**: Unlike other datasources, Couchbase does not require user credentials to access a bucket/database.  Buckets can be protected with a password.
+
+
+## Example Configuration
+
+```json
+  {
+    "couchbase": {
+      "host": "localhost",
+      "port": "8091",
+      "database": "myBucket",
+      "name": "couchbase",
+      "connector": "couchbase",
+      "mappings": {
+        "user": {
+          "email": "u::"
+        }
+      },
+      "views": {
+        "Orders": {
+          "userId": {
+            "designDocument": "loopback",
+            "viewName": "orders_userid"
+          }
+        }
+      }
+    }
+  }
+
+```
+
+Everything should be clear the only interesting parts are mappings & views.
+
+* "mappings" defines id-prefixes. So if somebody queries for a user by email then the query will be rewritten to a lookup by id. So if I look for {"email": "test@example.com"} it will do instead a look for the id: "u::test@example.com"
+* "views" defines views which can be used to loopup specific values. The example bellow allows to lookup "order" by "userId" by using the view "orders_userid" under a design-document called "loopback". For it to work a view like this has to be setup:
+
+```json
+  function (doc, meta) {
+    if (doc.docType && doc.docType == "Order" && doc.userId) {
+       emit(doc.userId, null);
+    }
+  }
+```
 
 
 ## Model definition for Couchbase Documents
@@ -112,17 +121,12 @@ The model definition consists of the following properties:
 
 ```
 
-### Example Application
-We have also put together a small example application which uses the **beer-sample** bucket which is an optional add-on when installing Couchbase Server. There is currently no client front-end for the example app, however you can use the LoopBack Explorer to interact with the API and connector.
-
-* [loopback-example-couchbase](https://github.com/guardly/loopback-example-couchbase): Example application
-
 ### Working with data
 Please refer to the official [LoopBack Documentation](http://docs.strongloop.com/display/public/LB/Working+with+data) for how to work with models and data.
 
 
 ### More to come!!!
-* Write additional tests
+* Write tests
 * Improve debugging and logging
 * etc!!!
 
