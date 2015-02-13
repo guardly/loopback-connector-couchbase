@@ -26,7 +26,8 @@
     "loopback-datasource-juggler": "^2.12.0",
     "node-dir": "^0.1.6",
     "node-uuid": "^1.4.1",
-    "node.extend": "^1.1.3"
+    "node.extend": "^1.1.3",
+    "q": "^1.1.2"
   },
   "devDependencies": {
     "rc": "~0.4.0"
