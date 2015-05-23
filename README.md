@@ -3,7 +3,7 @@
 
 The Couchbase Connector module for for [loopback-datasource-juggler](http://docs.strongloop.com/loopback-datasource-juggler/).
 
-This connector does not use N1QL. That means you can not simply lookup data you do not have view setup and defined in the configuration. This means you have to be very careful which data you query. If you for example have a relationship setup and you want to use it to query related data it will fail till you create * setup a view which allows it. Actually querying data will probably almost always fail if you do not use "findById". So you have to write your application a very specific way for it to work but the price for that effort is high performance. So for the most people using the N1QL implementation (from which I did fork) is probably better: https://github.com/guardly/loopback-connector-couchbase
+This connector does not use N1QL. That means you can not simply lookup data you do not have view setup and defined in the configuration. So you have to be very careful which data you query (that is why I put the expert in the name). If you for example have a relationship setup and you want to use it to query related data it will fail till you create * setup a view which allows it. Actually querying data will probably almost always fail if you do not use "findById". So you have to write your application a very specific way for it to work but the price for that effort is high performance. So for the most people using the N1QL implementation (from which I did fork) is probably better: https://github.com/guardly/loopback-connector-couchbase
 
 Btw. is also not really well tested. Did just fork to work best for my own needs of high performance (and no random query need).
 

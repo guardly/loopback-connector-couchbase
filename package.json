@@ -1,5 +1,5 @@
 {
-  "name": "loopback-connector-couchbase",
+  "name": "loopback-connector-couchbase-expert",
   "version": "0.1.0",
   "description": "LoopBack Couchbase Connector without N1QL",
   "keywords": [
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/janober/loopback-connector-couchbase.git"
+    "url": "https://github.com/janober/loopback-connector-couchbase-expert.git"
   },
   "dependencies": {
     "async": "~0.9.0",
@@ -34,10 +34,10 @@
   },
   "license": {
     "name": "MIT",
-    "url": "https://github.com/janober/loopback-connector-couchbase/blob/master/LICENSE.md"
+    "url": "https://github.com/janober/loopback-connector-couchbase-expert/blob/master/LICENSE.md"
   },
   "bugs": {
-    "url": "https://github.com/janober/loopback-connector-couchbase/issues"
+    "url": "https://github.com/janober/loopback-connector-couchbase-expert/issues"
   },
-  "homepage": "https://github.com/janober/loopback-connector-couchbase"
+  "homepage": "https://github.com/janober/loopback-connector-couchbase-expert"
 }
