@@ -21,7 +21,7 @@ Before installing the connector module, make sure you've taken the appropriate s
 ### Installing the connector
 ```npm install couchbase```
 
-```npm install loopback-connector-couchbase```
+```npm install loopback-connector-couchbase-expert```
 
 
 ## Connector settings
@@ -46,9 +46,9 @@ The connector can be configured using the following settings from the data sourc
       "host": "localhost",
       "port": "8091",
       "database": "myBucket",
-      "name": "couchbase",
+      "name": "couchbase-expert",
       "password": "secret",
-      "connector": "couchbase",
+      "connector": "couchbase-expert",
       "mappings": {
         "user": {
           "email": "u::"
