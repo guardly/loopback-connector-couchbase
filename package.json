@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "async": "~0.9.0",
-    "couchbase": "git+https://github.com/adpdigital/couchnode.git",
+    "couchbase": "~2.0.10",
     "debug": "1.0.4",
     "loopback": "2.8.6",
     "loopback-connector": "1.2.0",
