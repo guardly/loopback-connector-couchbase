@@ -1,6 +1,6 @@
 {
   "name": "loopback-connector-couchbase-expert",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "LoopBack Couchbase Connector without N1QL",
   "keywords": [
     "StrongLoop",
