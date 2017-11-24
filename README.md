@@ -30,12 +30,12 @@ The connector can be configured using the following settings from the data sourc
 * host  (default to 'localhost'): The host name or ip address of the Couchbase server
 * port (default to 8091): The port number of the Couchbase server
 * database: The Couchbase bucket
+* user: The user to access Couchbase cluster
+* password: The password to access Couchbase cluster
 * connectionTimeout (default to 20000): The connection timeout value
 * operationTimeout (default to 15000): The operation timeout value
 * mappings: Prefixes for values which get used as key (example below)
 * views: Views which can be used to loopup data
-
-**NOTE**: Unlike other datasources, Couchbase does not require user credentials to access a bucket/database.  Buckets can be protected with a password.
 
 
 ## Example Configuration
@@ -47,7 +47,8 @@ The connector can be configured using the following settings from the data sourc
       "port": "8091",
       "database": "myBucket",
       "name": "couchbase-expert",
-      "password": "secret",
+      "user": "my-user",
+      "password": "my-password",
       "connector": "couchbase-expert",
       "mappings": {
         "user": {
